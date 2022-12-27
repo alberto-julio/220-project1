@@ -1,0 +1,55 @@
+package project1.java;
+
+public class GameEntry {
+	private String GameName;// Here I declare all the private variables
+	private final int SIZE = 10;
+	private ScoreEntry[] scoreList = new ScoreEntry[SIZE];//I declare the array ScoreEntry score list, however I used the previous declared final SIZE to ensure that array will not surpass 10
+	private int size = 0;//I created an integer and set it to 0, this will keep track of how many numbers are stored in array
+	public GameEntry(String name) {//constructor for GameEntry class
+		this.GameName = name;
+	}
+	public String getGameName() {//getter function for the game name
+		return GameName;
+	}
+	public void setGameName(String gameName) {//setter function for the game name
+		GameName = gameName;
+	}
+	public ScoreEntry[] getScoreList(){//getter function for array
+		return scoreList;
+	}
+	public void setScoreList(ScoreEntry[] score){//setter function for array
+		scoreList = score;
+	}
+	public void add(ScoreEntry sc){//this is the add function, used to take score taken from user and add to list of names
+		int newScore = sc.getScore();//assigns new variable newScore to ScoreEntry'sc.getScore
+		if(size < SIZE || newScore > scoreList[size - 1].getScore()) {
+			if(size < scoreList.length) {
+				size++;
+			}
+			int j = size - 1;
+			while(j > 0 && scoreList[j -1].getScore() < newScore) {
+				scoreList[j] = scoreList[j -1];
+				j--;
+			}
+			scoreList[j] = sc;
+		}
+	}
+	public void remove(int rank) throws IndexOutOfBoundsException{//remove function to remove rank from list of names
+		if(rank < 0 || rank > size) {
+			throw new IndexOutOfBoundsException("rank removed:" + rank);
+		}
+		for(int i = rank -1; i < size -1; i++) {
+			scoreList[i] = scoreList[i +1];
+		}
+		size--;
+	}
+	/*public String toString() {
+		return System.out.println("Game: ") + getGameName();
+	}*/
+	public void print(){//print function used to print out names, scores and dates from list
+		for(int i = 0; i < size; i++){
+			System.out.println( i+1 + " " + scoreList[i].getPlayer() + " " + scoreList[i].getScore() + " " + scoreList[i].getDate());
+		}
+		return;
+	}
+}
