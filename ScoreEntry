@@ -1,0 +1,33 @@
+package project1.java;
+
+public class ScoreEntry {
+	private String player;//here I declare the private variables that will be used, in this case a string player, int score and string date
+	private int score;
+	private String date;
+	public ScoreEntry(String player, int score, String date) {//constructor for the ScoreEntry class
+		this.player = player;
+		this.score = score;
+		this.date = date;
+	}
+	public String getPlayer() {//getter function for Player name
+		return player;
+	}
+	public void setPlayer(String player) {//setter function for Player name
+		this.player = player;
+	}
+	public int getScore() {//getter function for score
+		return score;
+	}
+	public void setScore(int score) {//setter function for score
+		this.score = score;
+	}
+	public String getDate() {//getter function for date
+		return date;
+	}
+	public void setDate(String date) {//setter function for date
+		this.date = date;
+	}
+	//public String toString() {
+	//	return getPlayer() + " " + getScore() + " " + getDate();
+	//}
+} 
