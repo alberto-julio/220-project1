@@ -1,0 +1,91 @@
+package project1.java;
+import java.util.Scanner;//allows us to gain user input
+ 
+public class Project1 {
+	public static void main(String[] args){
+		Scanner in = new Scanner(System.in);//allows us to gain user input
+		
+		System.out.println("Please enter initials:");//asks user for player name
+		String name1 = in.nextLine();
+		
+		System.out.println("Please enter score:");//asks user for score
+		int Score1 = in.nextInt();
+		if(Score1 < 1 || Score1 > 10000) {//checks whether or not score is valid
+			System.out.println("Invalid score.");//if score is not valid then the program prints out "Invalid score." and terminates program
+			System.exit(0);
+		}
+		
+		System.out.println("Please enter date(mm/dd/yyyy):");//asks user for date
+		in.nextLine();
+		String date1 = in.nextLine();
+		 
+		GameEntry c1 = new GameEntry("Galaga");//creates object for game entry, in this case gameEntry is "Galaga"
+		ScoreEntry s1 = new ScoreEntry("JMR", 4500, "09/03/2021"); //creates objects for each score entry
+		ScoreEntry s2 = new ScoreEntry("AAS", 9999, "09/16/2016"); //creates objects for each score entry
+		ScoreEntry s3 = new ScoreEntry("RBA", 5200,"08/31/2021"); //creates objects for each score entry
+		ScoreEntry s4 = new ScoreEntry("RBA", 5700, "09/01/2021");//creates objects for each score entry
+		ScoreEntry s5 = new ScoreEntry(name1, Score1, date1);//object created for name, score and date that user has input
+		System.out.println("Game: Galaga");
+		c1.add(s1);//used to add scores to GameEntry "Galaga"
+		c1.add(s2);//used to add scores to GameEntry "Galaga"
+		c1.add(s3);//used to add scores to GameEntry "Galaga"
+		c1.add(s4);//used to add scores to GameEntry "Galaga"
+		c1.add(s5);//used to add scores to GameEntry "Galaga"
+		c1.print();//prints list before rank change
+		System.out.println("");
+		System.out.println("Please enter rank to remove: ");
+		int rank = in.nextInt();
+		c1.remove(rank);//removes rank
+		c1.print();//prints after rank change
+		
+		System.out.println("");
+		System.out.println("Please enter initials:");//asks user for name,this time for the pac man game entry
+		in.nextLine();
+		String name2 = in.nextLine();
+		
+		System.out.println("Please enter score:");//asks user for score,this time for the pac man game entry
+		int Score2 = in.nextInt();
+		if(Score2 < 1 || Score1 > 10000) {
+			System.out.println("Invalid score.");
+			System.exit(0);
+		}
+		System.out.println("Please enter date(mm/dd/yyyy):");//asks user for date,this time for the pac man game entry
+		in.nextLine();
+		String date2 = in.nextLine();
+		
+		GameEntry c2 = new GameEntry("Pac-Man");//creates object for game entry, in this case gameEntry is "Pac-Man"
+		ScoreEntry p1 = new ScoreEntry("AAS", 9999, "09/16/2016");//creates objects for each score entry
+		ScoreEntry p2 = new ScoreEntry("GCP", 6400, "08/16/2021");//creates objects for each score entry
+		ScoreEntry p3 = new ScoreEntry("RBA", 5200, "08/31/2021");//creates objects for each score entry
+		ScoreEntry p4 = new ScoreEntry("RBA", 5700, "09/01/2021");//creates objects for each score entry
+		ScoreEntry p5 = new ScoreEntry("BWP", 6200, "08/22/2021");//creates objects for each score entry
+		ScoreEntry p6 = new ScoreEntry("LMA", 8900, "07/05/2021");//creates objects for each score entry
+		ScoreEntry p7 = new ScoreEntry("VRT", 7400, "08/12/2021");//creates objects for each score entry
+		ScoreEntry p8 = new ScoreEntry("OFT", 1200, "09/04/2021");//creates objects for each score entry
+		ScoreEntry p9 = new ScoreEntry("GTB", 3400, "07/18/2021");//creates objects for each score entry
+		ScoreEntry p10 = new ScoreEntry("HBR", 9800, "08/14/2021");//creates objects for each score entry
+		ScoreEntry p11 = new ScoreEntry("JMR", 4500, "09/03/2021");//creates objects for each score entry
+		ScoreEntry p12 = new ScoreEntry("TMD", 1000, "09/02/2021");//creates objects for each score entry
+		ScoreEntry p13 = new ScoreEntry(name2, Score2, date2);//object created for name, score and date that user has input
+		System.out.println("Game: Pac-Man");
+		c2.add(p1);//used to add scores to GameEntry "Pac-Man"
+		c2.add(p2);//used to add scores to GameEntry "Pac-Man"
+		c2.add(p3);//used to add scores to GameEntry "Pac-Man"
+		c2.add(p4);//used to add scores to GameEntry "Pac-Man"
+		c2.add(p5);//used to add scores to GameEntry "Pac-Man"
+		c2.add(p6);//used to add scores to GameEntry "Pac-Man"
+		c2.add(p7);//used to add scores to GameEntry "Pac-Man"
+		c2.add(p8);//used to add scores to GameEntry "Pac-Man"
+		c2.add(p9);//used to add scores to GameEntry "Pac-Man"
+		c2.add(p10);//used to add scores to GameEntry "Pac-Man"
+		c2.add(p11);//used to add scores to GameEntry "Pac-Man"
+		c2.add(p12);//used to add scores to GameEntry "Pac-Man"
+		c2.add(p13);//used to add scores to GameEntry "Pac-Man"
+		c2.print();//prints list before rank change
+		System.out.println("");
+		System.out.println("Please enter rank to remove: ");
+		int rank2 = in.nextInt();
+		c2.remove(rank2);//removes rank
+		c2.print();//prints after rank change
+	} 
+} 
